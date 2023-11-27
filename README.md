@@ -1,5 +1,3 @@
-Test
-
 How to Hack your Buffalo LS210D and get Root  
 Christopher J. Pace and Ryan Miller
 
