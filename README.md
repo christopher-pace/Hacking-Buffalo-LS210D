@@ -20,7 +20,7 @@ Once you’ve written those two lines to the root crontab file, start a netcat s
 
 **netcat -l 8088**
 
-Once that command has entered on your PC, put the LS210D back together, and start it up. Once the clock reaches any minute that is divisible by 5, you will have an incoming connection from the NAS to your listening netcat session.
+Once that command has entered on your computer, put the LS210D back together, and start it up. Once the clock reaches any minute that is divisible by 5, you will have an incoming connection from the NAS to your listening netcat session.
 
 
 
