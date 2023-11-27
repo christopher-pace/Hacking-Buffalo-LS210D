@@ -7,7 +7,7 @@ The LS210D is a Network Attached Storage (NAS) drive manufactured by Buffalo. De
 
 Other than firmware tampering, you can also get access to the Buffalo LS210D via an external hard drive reader and a spare PC. You can probably depress the plastic catches on the outside of the NAS drive, but I decided to take a more drastic approach.
 
-![677640e06f4fad67bdf35a42f66e041f.png](resources/fead486f73b54fb7aa70b86f190bdfba.png)
+
 
 Once you have opened your LS210D, you can see that a spinner is mounted into a SATA interface on the system board. Unscrew the screws on the hard drive, and then slide while lifting to remove the hard drive. You can also remove the hard drive bracket, which may make it easier to remove the hard drive. To remove the hard drive bracket, gently rock it back and forth before lifting. There is a thermal pad that sits between the hard drive bracket and the CPU, gently rocking the hard drive bracket will allow you to remove the pad without tearing it.
 
@@ -24,7 +24,7 @@ Once you’ve written those two lines to the root crontab file, start a netcat s
 
 Once that command has entered on your PC, put the LS210D back together, and start it up. Once the clock reaches any minute that is divisible by 5, you will have an incoming connection from the NAS to your listening netcat session.
 
-![b2a0bc576fbfc44094e50bc3e93c3896.png](resources/35116a211d53477382e04b7db80c2f5f.png)
+
 
 Once you receive the message “bash: no job control in this shell”, you’ll have full root privileges on the NAS. However, netcat is notoriously unstable, so you will want to immediately reset the root password via the ‘passwd’ command. Finally, you need to generate the host SSH keys, via these commands:
 
@@ -32,7 +32,7 @@ Once you receive the message “bash: no job control in this shell”, you’ll 
 **ssh-keygen -t dsa -f /etc/ssh\_host\_dsa\_key -N ""**  
 **ssh-keygen -t dsa -f /etc/ssh\_host\_key -N ""**
 
-![a8151bf4681fa49083695abea169b187.png](resources/4d0e7d8737c645b0a44e9a41aa87ac8f.png)
+
 
 Now, after another 5 minutes, you should be able to SSH into the NAS. Make sure to confirm SSH access before terminating your netcat session, to make sure you didn’t mistype your new root password. Enjoy your new root privileges!
 
